@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="index.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="container" id="conttt">
+    <div class="innercont">
+      <div class="time">
+        <div class="day">
+          <label for="dayy" id="d">DAY</label>
+          <input type="number" id="dayy" placeholder="DD">
+          <span id="error1" class="error"></span>
+        </div>
+        <div class="month">
+          <label for="monthh" id="m">MONTH</label>
+          <input type="number" id="monthh" placeholder="MM">
+          <span id="error2" class="error"></span>
+        </div>
+        <div class="year">
+          <label for="yearr" id="y">YEAR</label>
+          <input type="number" id="yearr" placeholder="YYYY">
+          <span id="error3" class="error"></span>
+        </div>
+      </div>
+      <div class="second">
+        <div class="line"></div>
+        <img src="assets/images/icon-arrow.png" alt="arrow" class="img" id="imgg" >
+      </div>
+      <div class="third">
+        <!-- <span id="days"></span> -->
+        <span id="years">--</span>years<br>
+        <span id="months">--</span>months<br>
+        <span id="days">--</span>days
+        <!-- <p>
+          <input type="text" id="years" placeholder="--">years<br>
+          <input type="text" id="months" placeholder="--">months<br>
+          <input type="text" id="days" placeholder="--">days
+        </p> -->
+      </div>
+    </div>
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">TELEDUA ADEDOKUN</a>.
+  </div>
+  <script>
+    let calculator = document.getElementById("conttt")
+        day = document.getElementById("dayy"),
+        mon = document.getElementById("monthh"),
+        yr = document.getElementById("yearr"),
+        // day2 = document.getElementById("days"),
+        // mon2 = document.getElementById("months"),
+        // yr2 = document.getElementById("years");
+        date = new Date();
+
+        let 
+        day3 = date.getDate(),
+        month3 = date.getMonth()
+        year3 = date.getFullYear();
+
+
+        // day.value = date.getDate();
+        // month.value = date.getMonth;
+        // year.value = date.getFullYear;
+
+        document.getElementById("imgg").addEventListener("click", solve);
+        function solve(){
+          let d = Number.parseFloat(day.value),
+              m = Number.parseFloat(mon.value),
+              y = Number.parseFloat(yr.value);
+              // d1 = Number.parseFloat(day2.value),
+              // m1 = Number.parseFloat(month2.value),
+              // y1 = Number.parseFloat(year2.value);
+
+
+        if(d >= 32){
+          document.getElementById("error1").innerHTML = "Must be a valid day";
+          document.getElementById("d").style.color =  "hsl(0, 100%, 67%)";
+        }else if (d<=0){
+
+          document.getElementById("error1").innerHTML = "Must be a valid day";
+          document.getElementById("d").style.color =  "hsl(0, 100%, 67%)";
+        }else if(day3 < d){
+          days.innerHTML = (day3 - d + 30);
+        }else{
+          days.innerHTML= (day3-d)
+        }
+
+        // MONTH
+        if(m >=13){
+          document.getElementById("error2").innerHTML = "Must be a valid month";
+          document.getElementById("m").style.color =  "hsl(0, 100%, 67%)";
+        }else if(m<=0){
+          document.getElementById("error2").innerHTML = "Must be a valid month";
+          document.getElementById("m").style.color =  "hsl(0, 100%, 67%)";
+        }else if(month3 < m){
+          months.innerHTML = (month3 - m + 12);
+          // document.getElementById('months').value = (month3 - m + 12);
+        }else{
+          months.innerHTML= (month3-m)
+          // document.getElementById('months').value = (month3-m);
+        }
+
+        // YEAR
+        if(y >=2024){
+          document.getElementById("error3").innerHTML = "Must be a valid year";
+          document.getElementById("y").style.color =  "hsl(0, 100%, 67%)";
+        }else if(y<=0){
+          document.getElementById("error3").innerHTML = "Must be a valid year";
+          document.getElementById("y").style.color =  "hsl(0, 100%, 67%)";
+        }else{
+          years.innerHTML= (year3 - y);
+        }
+        // document.getElementById('years').value = (year3 - y);
+      }
+
+  </script>
+</body>
+</html>

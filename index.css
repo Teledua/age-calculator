@@ -1,0 +1,125 @@
+@font-face {
+    font-family: poppins;
+    src: url(assets/fonts/Poppins-Bold.ttf);
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: poppins1;
+    src: url(assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+    font-family: poppins2;
+    src: url(assets/fonts/Poppins-BoldItalic.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "poppins-regular";
+    display: grid;
+    height: 100vh;
+    place-items: center; 
+    background-color: rgb(216, 216, 216);  
+}
+.innercont{
+    padding: 5em;
+}
+.container{
+    background-color: white;
+    border-radius: 20px;
+    border-bottom-right-radius: 30%;
+}
+.time input{
+    border: solid 1px rgb(219, 219, 219);
+    border-radius: 2px;
+    height: 3em;
+    width: 7em;
+    outline: none;
+    /* appearance: textfield; */
+}
+
+input[type="number"]{
+    appearance: textfield;
+    font-family: poppins;
+    padding-left: 10px;
+}
+input[type="number"]:focus{
+   border: 2px solid hsl(259, 100%, 65%);
+}
+.time label{
+    font-family: poppins;
+    color: hsl(0, 1%, 44%);
+}
+.time{
+    display: flex;
+    gap: 5em;
+}
+.day{
+    display: grid;
+    gap: 0.05em;
+}
+.month{
+    display: grid;
+    gap: 0.05em;
+}
+.year{
+    display: grid;
+    gap: 0.05em;
+}
+
+/* SECOND PART */
+.second{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.img{
+    background-color:  hsl(259, 100%, 65%);
+    padding: 3%;
+    border-radius: 50%;
+}
+.line{
+    width: 35em;
+    border: 1px solid hsl(0, 0%, 86%);
+}
+
+/* THIRD PART */
+.third{
+    /* align-items: right; */
+    font-size: 50px;
+    font-family: poppins2;
+}
+/* input[type="text"]{
+    border: none;
+    width: 1.5em;
+    font-size: 1em;
+    letter-spacing: 7px;
+    font-style: italic;
+    color:  hsl(259, 100%, 65%);
+    font-family: poppins2;
+} */
+.third span{
+    color: hsl(259, 100%, 65%);
+    font-style: italic;
+    font-family: poppins2;
+    letter-spacing: 7px;
+}
+
+/* ERROR MESSAGE */
+.error{
+    /* display: none;  */
+    font-size: 9px;
+    font-family: poppins1;
+    color: hsl(0, 100%, 67%);
+    font-style: italic;
+}
+
+@media screen and (max-width: 500px){
+  .container{
+    display: flex;
+    justify-content: center;
+  }
+}
